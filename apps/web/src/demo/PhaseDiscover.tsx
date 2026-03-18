@@ -25,6 +25,14 @@ const GOAL_OPTIONS = [
   { value: 'incapacity', label: 'Plan for incapacity', Icon: IconHospital },
 ];
 
+const US_STATES = [
+  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+  'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+  'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
+  'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
+
 interface Props {
   profile: DemoProfile;
   updateProfile: (data: Partial<DemoProfile>) => void;
@@ -111,13 +119,23 @@ export const PhaseDiscover: React.FC<Props> = ({ profile, updateProfile, onNext 
         {/* State */}
         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
           <label className="text-sm font-medium text-text-secondary block mb-2">State of residence</label>
-          <input
-            type="text"
-            value={profile.state}
-            onChange={e => updateProfile({ state: e.target.value })}
-            placeholder="e.g., California"
-            className="w-full bg-bg-elevated border border-border rounded-xl px-5 py-3.5 text-text-primary placeholder:text-text-tertiary outline-none focus:border-accent-gold/40 transition-colors"
-          />
+          <div className="relative">
+            <select
+              value={profile.state || ''}
+              onChange={e => updateProfile({ state: e.target.value })}
+              className="w-full bg-bg-elevated border border-border rounded-xl px-5 py-3.5 text-text-primary outline-none focus:border-accent-gold/40 transition-colors appearance-none"
+            >
+              <option value="" disabled>Select a state...</option>
+              {US_STATES.map(state => (
+                <option key={state} value={state}>{state}</option>
+              ))}
+            </select>
+            <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none text-text-tertiary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
         </motion.div>
 
         {/* Children */}
