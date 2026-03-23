@@ -86,7 +86,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           transition={{ duration: 0.8 }}
           className="flex items-center gap-2.5 mb-14"
         >
-          <div className="w-9 h-9 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">L</div>
+          <img src="/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
           <span className="font-display font-semibold text-lg gradient-text tracking-tight">Legacy</span>
         </motion.div>
 
@@ -105,27 +105,17 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           </p>
         </motion.div>
 
-        {/* CTA button */}
+        {/* Scroll indicator (replacing CTA to force scrolling) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col items-center gap-4 mb-16"
+          className="flex flex-col items-center gap-4 mt-8 mb-16"
         >
-          <button
-            onClick={onStart}
-            className="group flex items-center gap-2.5 px-8 py-4 rounded-2xl font-medium text-sm bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all duration-300 shadow-[0_4px_24px_rgba(191,160,82,0.3)] hover:shadow-[0_8px_36px_rgba(191,160,82,0.45)] hover:scale-[1.02]"
-          >
-            Check Your Estate Health
-            <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-              <IconArrowRight size={16} />
-            </span>
-          </button>
-          <span className="text-[11px] text-text-tertiary">Interactive walkthrough · 3 minutes</span>
-          <p className="text-[10px] text-text-tertiary/70 mt-6 max-w-md text-center">
-            83% of Americans know they need an estate plan. Only 24% have done it.<br/>
-            <span className="italic">Source: Caring.com 2025 Wills Survey · Trust & Will Estate Planning Report 2025</span>
-          </p>
+          <p className="text-text-tertiary text-xs md:text-sm uppercase tracking-widest font-medium">Scroll to discover</p>
+          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-accent-gold mt-2">
+            ↓
+          </motion.div>
         </motion.div>
 
         {/* Scroll indicator */}

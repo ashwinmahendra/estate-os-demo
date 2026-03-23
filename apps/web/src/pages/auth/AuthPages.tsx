@@ -29,7 +29,7 @@ export const SignInPage: React.FC = () => {
       <div className="hidden lg:flex flex-1 items-center justify-center bg-bg-card border-r border-border p-12">
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-lg">E</div>
+            <img src="/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
             <span className="font-display font-bold text-2xl gradient-text">Legacy</span>
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
@@ -49,7 +49,7 @@ export const SignInPage: React.FC = () => {
           className="w-full max-w-sm"
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
+            <img src="/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
             <span className="font-display font-bold text-xl gradient-text">Legacy</span>
           </div>
 
@@ -115,7 +115,7 @@ export const SignUpPage: React.FC = () => {
       <div className="hidden lg:flex flex-1 items-center justify-center bg-bg-card border-r border-border p-12">
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-lg">E</div>
+            <img src="/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
             <span className="font-display font-bold text-2xl gradient-text">Legacy</span>
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
@@ -146,7 +146,7 @@ export const SignUpPage: React.FC = () => {
           className="w-full max-w-sm"
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
+            <img src="/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
             <span className="font-display font-bold text-xl gradient-text">Legacy</span>
           </div>
 

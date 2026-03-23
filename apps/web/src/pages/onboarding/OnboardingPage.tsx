@@ -499,7 +499,7 @@ const OnboardingPage: React.FC = () => {
       {/* Left sidebar - progress */}
       <aside className="hidden lg:flex w-72 bg-bg-card border-r border-border flex-col p-8">
         <div className="flex items-center gap-2 mb-12">
-          <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
+          <img src="/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
           <span className="font-display font-bold text-lg gradient-text">Legacy</span>
         </div>
         <Stepper steps={STEPS} currentStep={step} />

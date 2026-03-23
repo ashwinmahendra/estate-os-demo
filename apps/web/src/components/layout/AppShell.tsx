@@ -35,9 +35,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-4 h-16 border-b border-border shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">
-            L
-          </div>
+          <img src="/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
           {!sidebarCollapsed && (
             <span className="font-display font-bold text-lg gradient-text">Legacy</span>
           )}
