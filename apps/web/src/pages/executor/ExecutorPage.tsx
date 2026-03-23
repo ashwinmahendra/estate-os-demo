@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
+const logoUrl = '/estate-os-demo/logo.png';
 import { useAssetStore } from '@/store/assetStore';
 import { useEstateStore } from '@/store/estateStore';
 import { Badge, Button } from '@/components/ui';

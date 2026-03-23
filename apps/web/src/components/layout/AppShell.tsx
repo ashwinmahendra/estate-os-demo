@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
+const logoUrl = '/estate-os-demo/logo.png';
 import { useUserStore } from '@/store/userStore';
 import { cn } from '@/lib/utils';
 

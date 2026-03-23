@@ -1,5 +1,5 @@
 import React from 'react';
-import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
+const logoUrl = '/estate-os-demo/logo.png';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import {
   IconShield, IconEye, IconDocument, IconLock, IconTarget,
