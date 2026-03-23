@@ -87,7 +87,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-14"
         >
-          <img src={logoUrl} alt="Legacy" className="h-48 md:h-64 lg:h-80 w-auto object-contain drop-shadow-[0_0_40px_rgba(191,160,82,0.3)]" />
+          <img src={logoUrl} alt="Legacy" className="h-48 md:h-64 lg:h-80 w-auto object-contain" />
         </motion.div>
 
         {/* Hero text */}

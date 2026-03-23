@@ -500,7 +500,7 @@ const OnboardingPage: React.FC = () => {
       {/* Left sidebar - progress */}
       <aside className="hidden lg:flex w-72 bg-bg-card border-r border-border flex-col p-8">
         <div className="flex items-center justify-center mt-4 mb-16">
-          <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
+          <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain" />
         </div>
         <Stepper steps={STEPS} currentStep={step} />
         <div className="mt-auto">

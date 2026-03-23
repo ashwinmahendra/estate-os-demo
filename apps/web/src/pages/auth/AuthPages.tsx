@@ -30,7 +30,7 @@ export const SignInPage: React.FC = () => {
       <div className="hidden lg:flex flex-1 items-center justify-center bg-bg-card border-r border-border p-12">
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
-            <img src={logoUrl} alt="Legacy" className="h-24 lg:h-32 w-auto object-contain drop-shadow-[0_0_20px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-24 lg:h-32 w-auto object-contain " />
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
             Welcome back to your estate command center.
@@ -49,7 +49,7 @@ export const SignInPage: React.FC = () => {
           className="w-full max-w-sm"
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain " />
           </div>
 
           <h1 className="text-2xl font-bold font-display mb-2">Sign in</h1>
@@ -114,7 +114,7 @@ export const SignUpPage: React.FC = () => {
       <div className="hidden lg:flex flex-1 items-center justify-center bg-bg-card border-r border-border p-12">
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
-            <img src={logoUrl} alt="Legacy" className="h-24 lg:h-32 w-auto object-contain drop-shadow-[0_0_20px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-24 lg:h-32 w-auto object-contain " />
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
             Start protecting what matters most.
@@ -144,7 +144,7 @@ export const SignUpPage: React.FC = () => {
           className="w-full max-w-sm"
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain " />
           </div>
 
           <h1 className="text-2xl font-bold font-display mb-2">Create your account</h1>

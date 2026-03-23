@@ -86,7 +86,7 @@ export const DemoFlow: React.FC = () => {
       {/* Top nav */}
       <nav className="h-20 md:h-24 border-b border-border bg-bg-card/60 backdrop-blur-xl flex items-center justify-between px-6 shrink-0 sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <img src={logoUrl} alt="Legacy" className="h-14 md:h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
+          <img src={logoUrl} alt="Legacy" className="h-14 md:h-16 w-auto object-contain" />
           <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold font-medium">DEMO</span>
         </div>
 
