@@ -79,6 +79,6 @@ export const useAssetStore = create<AssetState>()(
         }));
       },
     }),
-    { name: 'estateos-asset-store' }
+    { name: 'legacy-asset-store' }
   )
 );

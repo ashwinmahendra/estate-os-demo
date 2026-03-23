@@ -23,27 +23,27 @@ const USP_CARDS = [
   {
     Icon: IconRefresh,
     title: 'Always Current',
-    desc: 'Traditional wills sit in a drawer and go stale. EstateOS keeps your estate plan synced with your actual life - assets change, your plan adapts.',
+    desc: 'Your estate is not static. A new home, a crypto wallet, a divorce — any of these can make a three-year-old will actively harmful. Legacy tracks your assets and flags when your plan needs to catch up.',
     color: '#6BBF7B',
   },
   {
     Icon: IconWarning,
-    title: 'Risk-Aware Intelligence',
-    desc: 'Most people don\'t know what they\'re missing. We identify unprotected assets, missing beneficiaries, and policy gaps before they become problems.',
+    title: 'Gaps You Can\'t See',
+    desc: 'Three assets in this demo have no named beneficiary. Without one, those assets go to probate - costing your family months and 3–8% of the asset\'s value. Most people don\'t know this until it\'s too late.',
     color: '#BFA052',
   },
   {
     Icon: IconTrendUp,
-    title: 'From Plan to Execution',
-    desc: 'Estate planning today stops at document generation. EstateOS carries through to secure storage, executor briefing, and actual handoff.',
+    title: 'Ready When It\'s Needed',
+    desc: 'A plan that exists only in your head — or in a drawer your family can\'t find — is not a plan. Legacy provides your executor with a complete settlement roadmap, account by account, the moment they need it.',
     color: '#7BA8D9',
   },
 ];
 
 const PROBLEM_STATEMENTS = [
-  { stat: '67%', label: 'of Americans have no estate plan at all', icon: IconWarning },
-  { stat: '52%', label: 'of existing wills are outdated or incomplete', icon: IconDocument },
-  { stat: '$7.4T', label: 'in assets transfer annually without a plan', icon: IconChart },
+  { stat: '76%', label: 'of Americans have no valid will', subtext: '"They haven\'t gotten around to it." — 43% of adults', icon: IconWarning },
+  { stat: '1 in 4', label: 'of those with a will haven\'t updated it', subtext: 'Marriage, children, new home, crypto — most wills are silent on all of it.', icon: IconDocument },
+  { stat: '$124T', label: 'transferring between generations by 2048', subtext: 'Most of it without a plan. (Cerulli Associates)', icon: IconChart },
 ];
 
 // Animated counter component
@@ -86,8 +86,8 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           transition={{ duration: 0.8 }}
           className="flex items-center gap-2.5 mb-14"
         >
-          <div className="w-9 h-9 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
-          <span className="font-display font-semibold text-lg gradient-text tracking-tight">EstateOS</span>
+          <div className="w-9 h-9 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">L</div>
+          <span className="font-display font-semibold text-lg gradient-text tracking-tight">Legacy</span>
         </motion.div>
 
         {/* Hero text */}
@@ -101,7 +101,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
             Your estate,<br /><span className="gradient-text">always ready.</span>
           </h1>
           <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
-            Estate planning hasn't changed in decades - static documents, no visibility, zero follow-through. EstateOS is a living system that protects what matters, end to end.
+            Most people spend their careers building something worth protecting. Then leave the people they love with no plan, no access, and no guidance when it matters most. Legacy changes that.
           </p>
         </motion.div>
 
@@ -116,12 +116,16 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
             onClick={onStart}
             className="group flex items-center gap-2.5 px-8 py-4 rounded-2xl font-medium text-sm bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all duration-300 shadow-[0_4px_24px_rgba(191,160,82,0.3)] hover:shadow-[0_8px_36px_rgba(191,160,82,0.45)] hover:scale-[1.02]"
           >
-            Experience the Platform
+            Check Your Estate Health
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
               <IconArrowRight size={16} />
             </span>
           </button>
           <span className="text-[11px] text-text-tertiary">Interactive walkthrough · 3 minutes</span>
+          <p className="text-[10px] text-text-tertiary/70 mt-6 max-w-md text-center">
+            83% of Americans know they need an estate plan. Only 24% have done it.<br/>
+            <span className="italic">Source: Caring.com 2025 Wills Survey · Trust & Will Estate Planning Report 2025</span>
+          </p>
         </motion.div>
 
         {/* Scroll indicator */}
@@ -148,10 +152,10 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
         >
           <p className="text-accent-gold text-xs font-medium tracking-widest uppercase mb-3">The Problem</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4 tracking-tight leading-tight">
-            Most families are <span className="gradient-text">unprepared.</span>
+            The people you love will face this. <span className="gradient-text">Ready or not.</span>
           </h2>
           <p className="text-text-secondary max-w-lg mx-auto">
-            Estate planning is broken. Documents get lost, go stale, and never get executed. Families are left scrambling at the worst possible moment.
+            When the time comes, or if you face a stroke or incapacitation — your family doesn't get time to prepare. They inherit the paperwork, the confusion, and the silence you left behind. Without a plan, the state decides everything.
           </p>
         </motion.div>
 
@@ -168,13 +172,27 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
               <div className="w-10 h-10 rounded-xl bg-accent-gold/8 text-accent-gold flex items-center justify-center mx-auto mb-3">
                 <item.icon size={18} />
               </div>
-              <div className="text-3xl font-bold mono-value gradient-text mb-1">
-                <Counter target={item.stat} delay={0.3 + i * 0.15} />
+              <div className="text-3xl font-bold mono-value gradient-text mb-2">
+                {item.stat}
               </div>
-              <p className="text-sm text-text-secondary">{item.label}</p>
+              <p className="text-sm font-semibold mb-1 text-text-primary">{item.label}</p>
+              <p className="text-xs text-text-tertiary">{item.subtext}</p>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-8 mx-auto max-w-2xl bg-bg-elevated border border-border rounded-xl p-6 text-center"
+        >
+          <p className="text-sm font-medium italic text-text-secondary">
+            "46% of people named as executor of a will were not even told they had been chosen."
+          </p>
+          <p className="text-[10px] text-text-tertiary mt-2">— Vanilla Estate Planning Research</p>
+        </motion.div>
       </section>
 
       {/* ───── SECTION 3: What Makes Us Different ───── */}
@@ -188,10 +206,10 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
         >
           <p className="text-accent-gold text-xs font-medium tracking-widest uppercase mb-3">What Makes Us Different</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4 tracking-tight leading-tight">
-            An operating system, <span className="gradient-text">not a document.</span>
+            A living plan. <span className="gradient-text">Not a filed-and-forgotten document.</span>
           </h2>
           <p className="text-text-secondary max-w-lg mx-auto">
-            EstateOS doesn't just generate paperwork. It creates a living, aware, executable estate plan that evolves with your life.
+            Every other platform creates a document and disappears. Legacy creates a living estate that knows what you own, flags what you're missing, and stays ready - so the people you love don't pay for your procrastination.
           </p>
         </motion.div>
 
@@ -229,10 +247,10 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
         >
           <p className="text-accent-gold text-xs font-medium tracking-widest uppercase mb-3">How It Works</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4 tracking-tight leading-tight">
-            Six phases. <span className="gradient-text">One complete plan.</span>
+            Six steps. <span className="gradient-text">One complete picture.</span>
           </h2>
           <p className="text-text-secondary max-w-lg mx-auto">
-            A guided workflow that takes you from discovery to execution. Every step is designed to capture, analyze, and protect.
+            From what you own today to who receives it when you can't speak for yourself. Every step is designed to protect the people you love.
           </p>
         </motion.div>
 
@@ -272,7 +290,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
         >
           <div className="flex items-center justify-center gap-2 mb-5 text-accent-gold">
             <IconZap size={18} />
-            <span className="text-xs font-medium tracking-widest uppercase">The EstateOS Advantage</span>
+            <span className="text-xs font-medium tracking-widest uppercase">The Legacy Advantage</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
             {[
@@ -310,16 +328,16 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
-            Ready to <span className="gradient-text">see it in action?</span>
+            What would happen to <span className="gradient-text">your family today?</span>
           </h2>
           <p className="text-text-secondary mb-8 max-w-md mx-auto">
-            Walk through the full experience - from profile to plan to vault. See exactly how EstateOS works.
+            Walk through the exact steps your family would face - assets, gaps, documents, vault. See what you're protecting, and what you're leaving unprotected.
           </p>
           <button
             onClick={onStart}
             className="group inline-flex items-center gap-2.5 px-10 py-4.5 rounded-2xl font-medium text-sm bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all duration-300 shadow-[0_4px_24px_rgba(191,160,82,0.3)] hover:shadow-[0_8px_36px_rgba(191,160,82,0.45)] hover:scale-[1.02]"
           >
-            Begin the Interactive Demo
+            Start My Estate Checkup
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
               <IconArrowRight size={16} />
             </span>

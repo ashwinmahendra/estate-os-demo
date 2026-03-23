@@ -36,8 +36,8 @@ const ExecutorPage: React.FC = () => {
     <div className="min-h-screen bg-bg-primary">
       <nav className="h-16 border-b border-border bg-bg-card flex items-center px-6">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
-          <span className="font-display font-bold text-lg gradient-text">EstateOS</span>
+          <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">L</div>
+          <span className="font-display font-bold text-lg gradient-text">Legacy</span>
           <Badge variant="gold" className="ml-2">Executor Mode</Badge>
         </div>
       </nav>

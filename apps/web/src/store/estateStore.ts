@@ -162,6 +162,6 @@ export const useEstateStore = create<EstateState>()(
 
       clearChat: () => set({ chatMessages: [] }),
     }),
-    { name: 'estateos-estate-store' }
+    { name: 'legacy-estate-store' }
   )
 );

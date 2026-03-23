@@ -55,6 +55,7 @@ export const PhaseDiscover: React.FC<Props> = ({ profile, updateProfile, onNext 
       <div className="space-y-10">
         {/* Name */}
         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+          <p className="text-sm text-text-tertiary mb-6">This takes about 3 minutes. No account needed.</p>
           <label className="text-sm font-medium text-text-secondary block mb-2">What's your name?</label>
           <input
             type="text"

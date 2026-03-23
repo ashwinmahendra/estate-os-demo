@@ -23,9 +23,10 @@ interface Props {
   totalValue: number;
   onBack: () => void;
   onRestart: () => void;
+  onNext?: () => void;
 }
 
-export const PhaseExecute: React.FC<Props> = ({ assets, profile, totalValue, onBack, onRestart }) => {
+export const PhaseExecute: React.FC<Props> = ({ assets, profile, totalValue, onBack, onRestart, onNext }) => {
   const [checks, setChecks] = React.useState<Record<string, boolean>>({});
   const toggle = (key: string) => setChecks(prev => ({ ...prev, [key]: !prev[key] }));
 
@@ -200,16 +201,16 @@ export const PhaseExecute: React.FC<Props> = ({ assets, profile, totalValue, onB
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
         className="mt-12 text-center card p-8 border-accent-gold/20">
         <div className="w-14 h-14 rounded-2xl bg-accent-gold/10 flex items-center justify-center mx-auto mb-4 text-accent-gold"><IconSparkle size={28} /></div>
-        <h2 className="font-display text-2xl font-bold mb-2">That's EstateOS</h2>
-        <p className="text-text-secondary text-sm max-w-md mx-auto mb-6">
-          From discovery to execution - a living estate plan that grows with your life. Not just a will. An operating system for everything you own.
+        <h2 className="font-display text-2xl font-bold mb-3">That's Legacy</h2>
+        <p className="text-text-secondary text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+          You made it. You now have a complete, living estate plan that actually protects the people you care about. When the time comes, they won't inherit a mess—they'll inherit your legacy.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <button onClick={onRestart} className="px-6 py-3 rounded-xl text-sm font-medium bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all shadow-[0_4px_20px_rgba(191,160,82,0.3)]">
-            Start Over
+        <div className="flex flex-col mx-auto w-full max-w-sm gap-3 group">
+          <button onClick={onNext} className="w-full py-4 rounded-xl text-sm font-bold bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all shadow-[0_4px_24px_rgba(191,160,82,0.3)] hover:shadow-[0_6px_32px_rgba(191,160,82,0.4)] hover:scale-[1.02] flex items-center justify-center gap-2">
+            Finish & Share Feedback <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </button>
-          <button className="px-6 py-3 rounded-xl text-sm font-medium border border-border text-text-secondary hover:text-text-primary hover:border-border-light transition-all">
-            Learn More
+          <button onClick={onRestart} className="w-full py-3 rounded-xl text-xs font-medium text-text-tertiary hover:text-text-primary transition-colors">
+            Start Over
           </button>
         </div>
       </motion.div>

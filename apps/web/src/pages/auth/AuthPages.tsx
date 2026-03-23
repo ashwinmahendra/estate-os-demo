@@ -30,7 +30,7 @@ export const SignInPage: React.FC = () => {
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-lg">E</div>
-            <span className="font-display font-bold text-2xl gradient-text">EstateOS</span>
+            <span className="font-display font-bold text-2xl gradient-text">Legacy</span>
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
             Welcome back to your estate command center.
@@ -50,7 +50,7 @@ export const SignInPage: React.FC = () => {
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
-            <span className="font-display font-bold text-xl gradient-text">EstateOS</span>
+            <span className="font-display font-bold text-xl gradient-text">Legacy</span>
           </div>
 
           <h1 className="text-2xl font-bold font-display mb-2">Sign in</h1>
@@ -116,7 +116,7 @@ export const SignUpPage: React.FC = () => {
         <div className="max-w-md">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-lg">E</div>
-            <span className="font-display font-bold text-2xl gradient-text">EstateOS</span>
+            <span className="font-display font-bold text-2xl gradient-text">Legacy</span>
           </div>
           <h2 className="font-display text-3xl font-bold mb-4">
             Start protecting what matters most.
@@ -147,7 +147,7 @@ export const SignUpPage: React.FC = () => {
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
-            <span className="font-display font-bold text-xl gradient-text">EstateOS</span>
+            <span className="font-display font-bold text-xl gradient-text">Legacy</span>
           </div>
 
           <h1 className="text-2xl font-bold font-display mb-2">Create your account</h1>

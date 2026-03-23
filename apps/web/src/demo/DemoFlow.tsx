@@ -8,6 +8,7 @@ import { PhaseAnalyze } from './PhaseAnalyze';
 import { PhaseGenerate } from './PhaseGenerate';
 import { PhaseSecure } from './PhaseSecure';
 import { PhaseExecute } from './PhaseExecute';
+import { PhaseSurvey } from './PhaseSurvey';
 
 export interface DemoAsset {
   id: string;
@@ -41,6 +42,7 @@ const PHASES = [
   { key: 'generate', label: 'Generate', num: '04', desc: 'Your Plan' },
   { key: 'secure', label: 'Secure', num: '05', desc: 'Digital Vault' },
   { key: 'execute', label: 'Execute', num: '06', desc: 'Handoff' },
+  { key: 'survey', label: 'Feedback', num: '07', desc: 'Survey' },
 ];
 
 export const DemoFlow: React.FC = () => {
@@ -60,7 +62,7 @@ export const DemoFlow: React.FC = () => {
   const removeAsset = (id: string) =>
     setState(prev => ({ ...prev, assets: prev.assets.filter(a => a.id !== id) }));
 
-  const next = () => setPhase(p => Math.min(p + 1, 5));
+  const next = () => setPhase(p => Math.min(p + 1, 6)); // Wait, 0-6 now
   const prev = () => setPhase(p => Math.max(p - 1, 0));
   const totalValue = state.assets.reduce((s, a) => s + a.value, 0);
 
@@ -83,8 +85,8 @@ export const DemoFlow: React.FC = () => {
       {/* Top nav */}
       <nav className="h-14 border-b border-border bg-bg-card/60 backdrop-blur-xl flex items-center justify-between px-6 shrink-0 sticky top-0 z-50">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-xs">E</div>
-          <span className="font-display font-semibold text-base gradient-text tracking-tight">EstateOS</span>
+          <div className="w-6 h-6 rounded-md bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-[10px]">L</div>
+          <span className="font-display font-semibold text-base gradient-text tracking-tight">Legacy</span>
           <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold font-medium ml-1">DEMO</span>
         </div>
 
@@ -126,7 +128,7 @@ export const DemoFlow: React.FC = () => {
       <div className="h-0.5 bg-border">
         <motion.div
           className="h-full bg-accent-gold"
-          animate={{ width: `${((phase + 1) / 6) * 100}%` }}
+          animate={{ width: `${((phase + 1) / 7) * 100}%` }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         />
       </div>
@@ -147,7 +149,8 @@ export const DemoFlow: React.FC = () => {
             {phase === 2 && <PhaseAnalyze assets={state.assets} profile={state.profile} totalValue={totalValue} onNext={next} onBack={prev} />}
             {phase === 3 && <PhaseGenerate profile={state.profile} assets={state.assets} totalValue={totalValue} onNext={next} onBack={prev} />}
             {phase === 4 && <PhaseSecure assets={state.assets} onNext={next} onBack={prev} />}
-            {phase === 5 && <PhaseExecute assets={state.assets} profile={state.profile} totalValue={totalValue} onBack={prev} onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
+            {phase === 5 && <PhaseExecute assets={state.assets} profile={state.profile} totalValue={totalValue} onBack={prev} onNext={next} onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
+            {phase === 6 && <PhaseSurvey onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
           </motion.div>
         </AnimatePresence>
       </div>

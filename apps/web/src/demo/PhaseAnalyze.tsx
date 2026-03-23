@@ -38,7 +38,7 @@ function generateRisks(assets: DemoAsset[], profile: DemoProfile) {
   const hasCrypto = assets.some(a => a.category === 'crypto');
   const totalVal = assets.reduce((s, a) => s + a.value, 0);
 
-  risks.push({ severity: 'high', title: 'No Will on File', desc: 'Without a will, your state decides how assets are distributed.', tip: 'Create a Last Will & Testament - can be done online in ~1 hour for $100–$300.' });
+  risks.push({ severity: 'medium', title: 'Will Has Not Been Created', desc: 'Without a will, state law determines who inherits your assets and who raises your children. It guarantees a public, expensive, and stressful probate process for your family. (Source: American Bar Association)', tip: 'Create a Last Will & Testament immediately.' });
   if (hasCrypto) risks.push({ severity: 'critical', title: 'Crypto Without Access Plan', desc: 'Cryptocurrency can be permanently lost without documented access instructions.', tip: 'Store wallet passwords and seed phrases in the Digital Vault with executor access.' });
   if (noBeneficiary.length > 0) risks.push({ severity: 'medium', title: `${noBeneficiary.length} Asset(s) Missing Beneficiary`, desc: `${noBeneficiary.map(a => a.name).join(', ')} have no named beneficiary.`, tip: 'Contact each institution to add beneficiary designations.' });
   if (profile.hasChildren) risks.push({ severity: 'high', title: 'Guardian Designation Needed', desc: 'If both parents pass, the court will decide who raises your children.', tip: 'Designate a guardian in your will immediately.' });

@@ -158,7 +158,7 @@ export const useUserStore = create<UserState>()(
       clearNotifications: () => set({ notifications: [] }),
     }),
     {
-      name: 'estateos-user-store',
+      name: 'legacy-user-store',
     }
   )
 );

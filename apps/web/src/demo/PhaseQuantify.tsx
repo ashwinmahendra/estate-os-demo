@@ -4,7 +4,7 @@ import type { DemoAsset } from './DemoFlow';
 import {
   IconBanknote, IconTrendUp, IconBank, IconHome, IconBitcoin,
   IconBuilding, IconUmbrella, IconCar, IconDiamond, IconCoins,
-  IconCheck, IconSquare, IconWarning,
+  IconCheck, IconSquare, IconWarning, IconZap,
 } from './Icons';
 
 const CATEGORIES = [
@@ -44,6 +44,17 @@ export const PhaseQuantify: React.FC<Props> = ({ assets, addAsset, removeAsset, 
     const meta = CATEGORIES.find(c => c.key === cat);
     addAsset({ category: cat, name, value: parseFloat(value) || 0, ownership, hasBeneficiary, icon: meta?.key || 'cash' });
     setCat(''); setName(''); setValue(''); setOwnership('Sole Owner'); setHasBeneficiary(false); setFormStep(0);
+  };
+
+  const handleRandomize = () => {
+    const defaultAssets: Omit<DemoAsset, 'id'>[] = [
+      { category: 'real_estate', name: 'Primary Residence', value: 850000, ownership: 'Joint with Spouse', hasBeneficiary: true, icon: 'real_estate' },
+      { category: 'retirement', name: 'Fidelity 401(k)', value: 420000, ownership: 'Sole Owner', hasBeneficiary: true, icon: 'retirement' },
+      { category: 'stocks', name: 'Vanguard Brokerage', value: 150000, ownership: 'Sole Owner', hasBeneficiary: false, icon: 'stocks' },
+      { category: 'cash', name: 'Chase Checking', value: 45000, ownership: 'Joint with Spouse', hasBeneficiary: false, icon: 'cash' },
+      { category: 'crypto', name: 'Coinbase Wallet', value: 28000, ownership: 'Sole Owner', hasBeneficiary: false, icon: 'crypto' },
+    ];
+    defaultAssets.forEach(a => addAsset(a));
   };
 
   const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
@@ -144,6 +155,15 @@ export const PhaseQuantify: React.FC<Props> = ({ assets, addAsset, removeAsset, 
             >
               + Add Your First Asset
             </button>
+
+            <div className="mt-14 max-w-sm mx-auto p-6 rounded-2xl border border-dashed border-accent-gold/30 bg-accent-gold/5 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-gold/0 via-accent-gold/5 to-accent-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <p className="text-xs font-semibold text-accent-gold flex justify-center items-center gap-2 uppercase tracking-widest mb-2"><IconZap size={14} /> Cheat Code Activated</p>
+              <p className="text-sm text-text-secondary mb-5 leading-relaxed">Don't feel like typing? Let us instantly generate a realistic, messy portfolio for you to analyze.</p>
+              <button onClick={handleRandomize} className="w-full py-3 rounded-xl bg-bg-elevated border border-accent-gold/20 text-accent-gold text-sm font-medium hover:bg-accent-gold/10 hover:border-accent-gold/40 transition-all flex items-center justify-center gap-2">
+                Randomize Demo Assets
+              </button>
+            </div>
           </motion.div>
         )}
       </div>

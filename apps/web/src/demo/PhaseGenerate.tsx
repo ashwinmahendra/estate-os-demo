@@ -161,6 +161,13 @@ export const PhaseGenerate: React.FC<Props> = ({ profile, assets, totalValue, on
         </div>
       </motion.div>
 
+      {/* Disclaimer */}
+      <div className="mt-8 text-center px-4">
+        <p className="text-[10px] text-text-tertiary max-w-2xl mx-auto leading-relaxed">
+          Legacy provides estate planning guidance and tools, not legal advice. The estimated costs and timelines shown above are averages for reference only. For specific legal documents, consult a licensed attorney in your state.
+        </p>
+      </div>
+
       <div className="flex items-center justify-between mt-10">
         <button onClick={onBack} className="px-5 py-2.5 rounded-xl text-sm text-text-secondary hover:text-text-primary transition-colors">← Back</button>
         <button onClick={onNext} className="px-8 py-3.5 rounded-xl font-medium text-sm bg-accent-gold text-bg-primary hover:bg-accent-gold-light transition-all shadow-[0_4px_20px_rgba(191,160,82,0.3)]">

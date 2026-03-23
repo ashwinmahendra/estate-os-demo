@@ -94,7 +94,7 @@ const VaultPage: React.FC = () => {
             <label className="text-sm font-medium text-text-secondary">Content</label>
             <textarea value={content} onChange={e => setContent(e.target.value)} placeholder="Enter sensitive info..." className="w-full bg-bg-elevated border border-border rounded-lg px-4 py-2.5 text-text-primary placeholder:text-text-tertiary outline-none min-h-[100px] focus:border-accent-gold/50" />
           </div>
-          <div className="card p-3 bg-accent-gold/5 border-accent-gold/20"><p className="text-xs text-accent-gold">🔒 Encrypted. Even EstateOS cannot read it.</p></div>
+          <div className="card p-3 bg-accent-gold/5 border-accent-gold/20"><p className="text-xs text-accent-gold">🔒 Encrypted. Even Legacy cannot read it.</p></div>
           <Select label="Access Level" options={[{ value: 'PRIVATE', label: 'Only me' }, { value: 'EXECUTOR_ON_DEATH', label: 'Executor on death' }, { value: 'EXECUTOR_ON_INCAPACITY', label: 'Executor on incapacity/death' }, { value: 'ALWAYS_ACCESSIBLE', label: 'Always accessible' }]} value={accessLevel} onChange={v => setAccessLevel(v as VaultAccessLevel)} />
           <Input label="Note for executor" placeholder="Optional instructions" value={note} onChange={e => setNote(e.target.value)} />
           <div className="flex gap-3"><Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Cancel</Button><Button onClick={handleSave} className="flex-1" disabled={!title || !content}>{editItem ? 'Save' : 'Add'}</Button></div>

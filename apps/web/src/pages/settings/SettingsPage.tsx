@@ -43,7 +43,7 @@ const SettingsPage: React.FC = () => {
         </div>
 
         <p className="text-xs text-text-tertiary mt-6 text-center">
-          EstateOS provides estate planning guidance and tools, not legal advice. For legal documents, consult a licensed attorney in your state.
+          Legacy provides estate planning guidance and tools, not legal advice. For legal documents, consult a licensed attorney in your state.
         </p>
       </motion.div>
     </div>

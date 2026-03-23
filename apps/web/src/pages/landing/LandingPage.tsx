@@ -86,8 +86,8 @@ export const LandingPage: React.FC = () => {
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">E</div>
-            <span className="font-display font-bold text-xl gradient-text">EstateOS</span>
+            <div className="w-8 h-8 rounded-lg bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-sm">L</div>
+            <span className="font-display font-bold text-xl gradient-text">Legacy</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Features</a>
@@ -302,7 +302,7 @@ export const LandingPage: React.FC = () => {
           {/* Quote cards */}
           <div className="grid md:grid-cols-2 gap-6 mt-16">
             {[
-              { quote: "I had no idea my crypto would be permanently lost without an access plan. EstateOS caught that in minutes.", name: 'Jordan T.', role: 'Software Engineer, 28', avatar: '🧑‍💻' },
+              { quote: "I had no idea my crypto would be permanently lost without an access plan. Legacy caught that in minutes.", name: 'Jordan T.', role: 'Software Engineer, 28', avatar: '🧑‍💻' },
               { quote: "After my father passed, settling his estate took 18 months. I wish he'd had something like this.", name: 'Margaret L.', role: 'Retired CFO, 62', avatar: '👩‍💼' },
             ].map((testimonial, i) => (
               <motion.div
@@ -356,11 +356,11 @@ export const LandingPage: React.FC = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded bg-accent-gold flex items-center justify-center text-bg-primary font-bold text-xs">E</div>
-            <span className="text-sm text-text-tertiary">EstateOS © {new Date().getFullYear()}</span>
+            <span className="text-sm text-text-tertiary">Legacy © {new Date().getFullYear()}</span>
           </div>
-          <p className="text-xs text-text-tertiary max-w-lg text-center md:text-right">
-            EstateOS provides estate planning guidance and tools, not legal advice. For legal documents, consult a licensed attorney in your state.
-          </p>
+          <div className="text-[10px] text-text-tertiary max-w-3xl text-center md:text-left leading-relaxed">
+            Legacy provides estate planning guidance and tools, not legal advice. For legal documents, consult a licensed attorney in your state.
+          </div>
         </div>
       </footer>
     </div>
