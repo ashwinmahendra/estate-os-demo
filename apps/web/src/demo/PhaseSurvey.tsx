@@ -13,9 +13,11 @@ interface SurveyData {
   email?: string;
 }
 
+import type { DemoProfile } from './DemoFlow';
+
 const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyohjOn1mp7uBnNfDXfrVIcEg2k75RTcFEd-AGq8ONAXPmVgFFfmoAxgeFTBnQV4FX8/exec";
 
-export const PhaseSurvey: React.FC<{ onRestart: () => void }> = ({ onRestart }) => {
+export const PhaseSurvey: React.FC<{ profile?: DemoProfile; onRestart: () => void }> = ({ profile, onRestart }) => {
   const [step, setStep] = useState(0); // 0, 1, 2 for questions, 3 for post-submit
   const [data, setData] = useState<SurveyData>({ q2: [], q6: [] });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,6 +45,13 @@ export const PhaseSurvey: React.FC<{ onRestart: () => void }> = ({ onRestart }) 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           timestamp: new Date().toISOString(),
+          name: profile?.name || "",
+          age: profile?.age || "",
+          maritalStatus: profile?.maritalStatus || "",
+          state: profile?.state || "",
+          hasChildren: profile?.hasChildren ? "Yes" : "No",
+          childCount: profile?.childCount || 0,
+          goals: profile?.goals?.join("; ") || "",
           q1: finalData.q1 || "",
           q2: finalData.q2?.join("; ") || "",
           q3: finalData.q3 || "",

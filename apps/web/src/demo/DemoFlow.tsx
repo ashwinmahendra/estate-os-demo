@@ -84,10 +84,9 @@ export const DemoFlow: React.FC = () => {
     <div className="min-h-screen bg-bg-primary flex flex-col relative" style={{ zIndex: 1 }}>
       {/* Top nav */}
       <nav className="h-14 border-b border-border bg-bg-card/60 backdrop-blur-xl flex items-center justify-between px-6 shrink-0 sticky top-0 z-50">
-        <div className="flex items-center gap-2.5">
-          <img src="/estate-os-demo/logo.jpg" alt="Legacy Logo" className="h-6 w-auto mix-blend-lighten object-contain rounded" />
-          <span className="font-display font-semibold text-base gradient-text tracking-tight">Legacy</span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold font-medium ml-1">DEMO</span>
+        <div className="flex items-center gap-3">
+          <img src="/estate-os-demo/logo.png" alt="Legacy" className="h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold font-medium">DEMO</span>
         </div>
 
         {/* Phase indicator */}
@@ -150,7 +149,7 @@ export const DemoFlow: React.FC = () => {
             {phase === 3 && <PhaseGenerate profile={state.profile} assets={state.assets} totalValue={totalValue} onNext={next} onBack={prev} />}
             {phase === 4 && <PhaseSecure assets={state.assets} onNext={next} onBack={prev} />}
             {phase === 5 && <PhaseExecute assets={state.assets} profile={state.profile} totalValue={totalValue} onBack={prev} onNext={next} onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
-            {phase === 6 && <PhaseSurvey onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
+            {phase === 6 && <PhaseSurvey profile={state.profile} onRestart={() => { setState({ profile: { name: '', age: '', maritalStatus: '', state: '', hasChildren: false, childCount: 0, goals: [] }, assets: [] }); setPhase(0); setStarted(false); }} />}
           </motion.div>
         </AnimatePresence>
       </div>

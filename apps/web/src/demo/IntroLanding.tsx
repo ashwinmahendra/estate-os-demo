@@ -84,10 +84,9 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center gap-2.5 mb-14"
+          className="flex justify-center mb-14"
         >
-          <img src="/estate-os-demo/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
-          <span className="font-display font-semibold text-lg gradient-text tracking-tight">Legacy</span>
+          <img src="/estate-os-demo/logo.png" alt="Legacy" className="h-32 md:h-48 w-auto object-contain drop-shadow-[0_0_30px_rgba(191,160,82,0.4)]" />
         </motion.div>
 
         {/* Hero text */}
