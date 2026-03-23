@@ -13,7 +13,7 @@ interface SurveyData {
   email?: string;
 }
 
-const GOOGLE_SHEETS_WEB_APP_URL = "YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
+const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyohjOn1mp7uBnNfDXfrVIcEg2k75RTcFEd-AGq8ONAXPmVgFFfmoAxgeFTBnQV4FX8/exec";
 
 export const PhaseSurvey: React.FC<{ onRestart: () => void }> = ({ onRestart }) => {
   const [step, setStep] = useState(0); // 0, 1, 2 for questions, 3 for post-submit
@@ -37,24 +37,22 @@ export const PhaseSurvey: React.FC<{ onRestart: () => void }> = ({ onRestart }) 
   const sendToGoogleSheets = async (finalData: SurveyData) => {
     setIsSubmitting(true);
     try {
-      if (GOOGLE_SHEETS_WEB_APP_URL !== "YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE") {
-        await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            timestamp: new Date().toISOString(),
-            q1: finalData.q1 || "",
-            q2: finalData.q2?.join("; ") || "",
-            q3: finalData.q3 || "",
-            q4: finalData.q4 || "",
-            q5: finalData.q5 || "",
-            q6: finalData.q6?.join("; ") || "",
-            q7: finalData.q7 || "",
-            email: finalData.email || ""
-          }),
-        });
-      }
+      await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          q1: finalData.q1 || "",
+          q2: finalData.q2?.join("; ") || "",
+          q3: finalData.q3 || "",
+          q4: finalData.q4 || "",
+          q5: finalData.q5 || "",
+          q6: finalData.q6?.join("; ") || "",
+          q7: finalData.q7 || "",
+          email: finalData.email || ""
+        }),
+      });
     } catch (e) {
       console.error("Error submitting to Sheets", e);
     }
