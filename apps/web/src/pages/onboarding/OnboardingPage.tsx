@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logoUrl from '@/assets/logo.png';
+import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUserStore } from '@/store/userStore';
 import { Button } from '@/components/ui';

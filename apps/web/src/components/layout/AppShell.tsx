@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoUrl from '@/assets/logo.png';
+import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
 import { useUserStore } from '@/store/userStore';
 import { cn } from '@/lib/utils';
 

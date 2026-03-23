@@ -1,5 +1,5 @@
 import React from 'react';
-import logoUrl from '@/assets/logo.png';
+import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import {
   IconShield, IconEye, IconDocument, IconLock, IconTarget,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logoUrl from '@/assets/logo.png';
+import { LOGO_BASE64 as logoUrl } from '@/assets/logoBase64';
 import { useAssetStore } from '@/store/assetStore';
 import { useEstateStore } from '@/store/estateStore';
 import { Badge, Button } from '@/components/ui';
