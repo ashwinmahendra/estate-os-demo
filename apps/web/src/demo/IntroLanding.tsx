@@ -75,59 +75,56 @@ const Counter: React.FC<{ target: string; delay: number }> = ({ target, delay })
 export const IntroLanding: React.FC<Props> = ({ onStart }) => {
   return (
     <div className="relative" style={{ zIndex: 1 }}>
-      {/* ───── SECTION 1: Hero ───── */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative">
-        {/* Subtle background glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-accent-gold/[0.02] blur-[150px] pointer-events-none" />
+      {/* ───── SECTION 1: Hero with Cosmic Banner ───── */}
+      <section className="min-h-screen flex flex-col items-center relative overflow-hidden">
+        {/* Cosmic starfield background that covers the entire hero */}
+        <div className="absolute inset-0 bg-[#070b14]" />
 
-        {/* Logo */}
+        {/* Cosmic banner — the logo is embedded naturally in the image */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center mb-14"
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+          className="relative w-full flex justify-center pt-12 md:pt-20"
         >
-          <img src={logoUrl} alt="Legacy" className="h-48 md:h-64 lg:h-80 w-auto object-contain drop-shadow-[0_0_40px_rgba(191,160,82,0.3)]" />
+          <img
+            src="/estate-os-demo/hero-banner.jpg"
+            alt="Legacy Estate Planning"
+            className="w-full max-w-5xl h-auto object-contain"
+          />
+          {/* Bottom fade to blend banner into the dark background */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070b14] to-transparent" />
+          {/* Side fades for seamless blending */}
+          <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#070b14] to-transparent" />
+          <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#070b14] to-transparent" />
         </motion.div>
 
-        {/* Hero text */}
+        {/* Hero text — cleanly below the banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-center max-w-2xl mb-12"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative z-10 text-center max-w-2xl px-6 -mt-8 mb-12"
         >
-          <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.1] mb-5 tracking-tight">
+          <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.1] mb-5 tracking-tight text-white">
             Your estate,<br /><span className="gradient-text">always ready.</span>
           </h1>
-          <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
             Most people spend their careers building something worth protecting. Then leave the people they love with no plan, no access, and no guidance when it matters most. Legacy changes that.
           </p>
         </motion.div>
 
-        {/* Scroll indicator (replacing CTA to force scrolling) */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col items-center gap-4 mt-8 mb-16"
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="relative z-10 flex flex-col items-center gap-3 pb-12"
         >
-          <p className="text-text-tertiary text-xs md:text-sm uppercase tracking-widest font-medium">Scroll to discover</p>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-accent-gold mt-2">
+          <p className="text-gray-500 text-xs md:text-sm uppercase tracking-widest font-medium">Scroll to discover</p>
+          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-accent-gold mt-1">
             ↓
           </motion.div>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4, y: [0, 6, 0] }}
-          transition={{ opacity: { delay: 1.5, duration: 0.8 }, y: { delay: 1.5, duration: 2, repeat: Infinity } }}
-          className="absolute bottom-8 text-text-tertiary"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.2">
-            <path d="M4 8l6 6 6-6" />
-          </svg>
         </motion.div>
       </section>
 
