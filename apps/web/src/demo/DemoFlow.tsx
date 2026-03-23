@@ -85,7 +85,7 @@ export const DemoFlow: React.FC = () => {
       {/* Top nav */}
       <nav className="h-14 border-b border-border bg-bg-card/60 backdrop-blur-xl flex items-center justify-between px-6 shrink-0 sticky top-0 z-50">
         <div className="flex items-center gap-2.5">
-          <img src="/logo.jpg" alt="Legacy Logo" className="h-6 w-auto mix-blend-lighten object-contain rounded" />
+          <img src="/estate-os-demo/logo.jpg" alt="Legacy Logo" className="h-6 w-auto mix-blend-lighten object-contain rounded" />
           <span className="font-display font-semibold text-base gradient-text tracking-tight">Legacy</span>
           <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold font-medium ml-1">DEMO</span>
         </div>

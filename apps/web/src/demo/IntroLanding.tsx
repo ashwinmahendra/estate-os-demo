@@ -86,7 +86,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           transition={{ duration: 0.8 }}
           className="flex items-center gap-2.5 mb-14"
         >
-          <img src="/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
+          <img src="/estate-os-demo/logo.jpg" alt="Legacy Logo" className="h-10 w-auto mix-blend-lighten object-contain rounded" />
           <span className="font-display font-semibold text-lg gradient-text tracking-tight">Legacy</span>
         </motion.div>
 

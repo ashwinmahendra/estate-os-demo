@@ -36,7 +36,7 @@ const ExecutorPage: React.FC = () => {
     <div className="min-h-screen bg-bg-primary">
       <nav className="h-16 border-b border-border bg-bg-card flex items-center px-6">
         <div className="flex items-center gap-2">
-          <img src="/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
+          <img src="/estate-os-demo/logo.jpg" alt="Legacy Logo" className="h-8 w-auto mix-blend-lighten object-contain rounded" />
           <span className="font-display font-bold text-lg gradient-text">Legacy</span>
           <Badge variant="gold" className="ml-2">Executor Mode</Badge>
         </div>
