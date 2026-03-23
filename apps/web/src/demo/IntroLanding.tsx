@@ -1,4 +1,5 @@
 import React from 'react';
+import logoUrl from '@/assets/logo.png';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import {
   IconShield, IconEye, IconDocument, IconLock, IconTarget,
@@ -86,7 +87,7 @@ export const IntroLanding: React.FC<Props> = ({ onStart }) => {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-14"
         >
-          <img src="/estate-os-demo/logo.png" alt="Legacy" className="h-32 md:h-48 w-auto object-contain drop-shadow-[0_0_30px_rgba(191,160,82,0.4)]" />
+          <img src={logoUrl} alt="Legacy" className="h-48 md:h-64 lg:h-80 w-auto object-contain drop-shadow-[0_0_40px_rgba(191,160,82,0.3)]" />
         </motion.div>
 
         {/* Hero text */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoUrl from '@/assets/logo.png';
 import { useUserStore } from '@/store/userStore';
 import { cn } from '@/lib/utils';
 
@@ -34,8 +35,8 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         )}
       >
         {/* Logo */}
-        <div className="flex items-center justify-center px-4 h-20 border-b border-border shrink-0 mt-4 mb-2">
-          <img src="/estate-os-demo/logo.png" alt="Legacy" className={`w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)] transition-all duration-300 ${sidebarCollapsed ? 'h-8' : 'h-14'}`} />
+        <div className="flex items-center justify-center px-4 h-28 border-b border-border shrink-0 mt-4 mb-2">
+          <img src={logoUrl} alt="Legacy" className={`w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)] transition-all duration-300 ${sidebarCollapsed ? 'h-8' : 'h-20'}`} />
         </div>
 
         {/* Nav items */}

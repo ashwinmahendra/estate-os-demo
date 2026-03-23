@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import logoUrl from '@/assets/logo.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button, CountUp } from '@/components/ui';
 import { useUserStore } from '@/store/userStore';
@@ -84,9 +85,9 @@ export const LandingPage: React.FC = () => {
     <div className="min-h-screen bg-bg-primary">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/estate-os-demo/logo.png" alt="Legacy Logo" className="h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Features</a>
@@ -354,7 +355,7 @@ export const LandingPage: React.FC = () => {
       <footer className="border-t border-border py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/estate-os-demo/logo.png" alt="Legacy Logo" className="h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(191,160,82,0.3)]" />
+            <img src={logoUrl} alt="Legacy" className="h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
             <span className="text-sm text-text-tertiary">© {new Date().getFullYear()}</span>
           </div>
           <div className="text-[10px] text-text-tertiary max-w-3xl text-center md:text-left leading-relaxed">

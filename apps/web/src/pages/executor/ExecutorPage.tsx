@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logoUrl from '@/assets/logo.png';
 import { useAssetStore } from '@/store/assetStore';
 import { useEstateStore } from '@/store/estateStore';
 import { Badge, Button } from '@/components/ui';
@@ -34,9 +35,9 @@ const ExecutorPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary">
-      <nav className="h-16 border-b border-border bg-bg-card flex items-center px-6">
+      <nav className="h-24 border-b border-border bg-bg-card flex items-center px-6">
         <div className="flex items-center gap-2">
-          <img src="/estate-os-demo/logo.png" alt="Legacy Logo" className="h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(191,160,82,0.3)]" />
+          <img src={logoUrl} alt="Legacy" className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(191,160,82,0.3)]" />
           <Badge variant="gold" className="ml-2">Executor Mode</Badge>
         </div>
       </nav>
