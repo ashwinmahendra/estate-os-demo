@@ -15,7 +15,7 @@ interface SurveyData {
 
 import type { DemoProfile } from './DemoFlow';
 
-const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyohjOn1mp7uBnNfDXfrVIcEg2k75RTcFEd-AGq8ONAXPmVgFFfmoAxgeFTBnQV4FX8/exec";
+const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzSLvtACL8Sb1G7eS1QuMZEHEzMDA49NpttjnX0KTnxw2oEPmGy1M6mAvL1RQ_X8nwj/exec";
 
 export const PhaseSurvey: React.FC<{ profile?: DemoProfile; onRestart: () => void }> = ({ profile, onRestart }) => {
   const [step, setStep] = useState(0); // 0, 1, 2 for questions, 3 for post-submit
