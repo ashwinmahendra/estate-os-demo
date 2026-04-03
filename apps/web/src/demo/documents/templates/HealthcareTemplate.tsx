@@ -1,10 +1,10 @@
 import React from 'react';
-import type { DemoProfile } from '../../DemoFlow';
+import type { DemoProfile, DemoAsset } from '../../DemoFlow';
 import type { StateRules } from '../stateRules';
 import { Placeholder } from '../Placeholder';
 import { InlineFlag } from '../ComplianceFlag';
 
-interface Props { profile: DemoProfile; assets: never[]; totalValue: number; rules: StateRules; }
+interface Props { profile: DemoProfile; assets: DemoAsset[]; totalValue: number; rules: StateRules; }
 
 export const HealthcareTemplate: React.FC<Props> = ({ profile, rules }) => {
   const name = profile.name || 'Unknown';
