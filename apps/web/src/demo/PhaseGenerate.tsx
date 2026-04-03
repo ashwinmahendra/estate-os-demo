@@ -6,6 +6,7 @@ import {
   IconBaby, IconBuilding, IconUserGroup,
   IconDollar, IconClock,
 } from './Icons';
+import { DocumentModal } from './documents/DocumentModal';
 
 interface Doc {
   type: string;
@@ -63,6 +64,7 @@ export const PhaseGenerate: React.FC<Props> = ({ profile, assets, totalValue, on
   const docs = getDocuments(profile, assets, totalValue);
   const [generating, setGenerating] = React.useState(true);
   const [revealed, setRevealed] = React.useState(0);
+  const [selectedDoc, setSelectedDoc] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const t = setTimeout(() => setGenerating(false), 2000);
@@ -116,7 +118,8 @@ export const PhaseGenerate: React.FC<Props> = ({ profile, assets, totalValue, on
               initial={{ opacity: 0, y: 20 }}
               animate={visible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4 }}
-              className={`card p-5 transition-all ${!visible ? 'opacity-0' : ''}`}
+              className={`card p-5 transition-all cursor-pointer hover:border-accent-gold/40 hover:shadow-[0_0_20px_rgba(191,160,82,0.1)] ${!visible ? 'opacity-0' : ''}`}
+              onClick={() => visible && setSelectedDoc(doc.type)}
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-bg-elevated flex items-center justify-center text-text-secondary shrink-0 mt-0.5">
@@ -174,6 +177,17 @@ export const PhaseGenerate: React.FC<Props> = ({ profile, assets, totalValue, on
           Secure Your Vault →
         </button>
       </div>
+
+      {/* Document Modal */}
+      {selectedDoc && (
+        <DocumentModal
+          docType={selectedDoc}
+          profile={profile}
+          assets={assets}
+          totalValue={totalValue}
+          onClose={() => setSelectedDoc(null)}
+        />
+      )}
     </div>
   );
 };
